@@ -31,9 +31,6 @@ export const MainPage  = () =>  {
         name: '',
         number: ''
     })
-
-
-
     useEffect(() => {
         const constants = localStorage.getItem('contacts')
         if (constants){
@@ -43,10 +40,9 @@ export const MainPage  = () =>  {
             )
         }
     },[])
+
     useEffect(() => {
         localStorage.setItem('contacts', JSON.stringify(state.contacts))
-
-
     },[state.contacts])
 
     const onChangeName = (value: string) => {
